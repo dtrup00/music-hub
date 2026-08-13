@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gym Beast Mode 🔥 Workout Playlist</title>
+<link rel="stylesheet" href="../../assets/shared/base.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="now-playing-card">
+    <div class="page-title">🔥 Beast Mode 🔥</div>
+    <div class="now-playing-label">Now Playing</div>
+
+    <img id="song-art" class="album-art" src="" alt="Album art" />
+    <h2 id="song-title" class="song-title">Loading...</h2>
+    <p id="song-artist" class="song-artist"></p>
+
+    <p id="quote" class="quote"></p>
+
+    <div class="controls">
+      <button id="prev" aria-label="Previous song">⏮</button>
+      <button id="play-pause" aria-label="Play or pause">▶</button>
+      <button id="next" aria-label="Next song">⏭</button>
+    </div>
+
+    <div id="yt-player"></div>
+
+    <a class="back-link" href="../../index.html">← Back to Music Hub</a>
+  </div>
+
+  <script src="songs.js"></script>
+  <script src="quotes.js"></script>
+  <script src="../../assets/shared/player.js"></script>
+  <script>
+    const player = new MusicPlayer({
+      songs: SONGS,
+      quotes: QUOTES,
+      els: {
+        title: document.getElementById('song-title'),
+        artist: document.getElementById('song-artist'),
+        art: document.getElementById('song-art'),
+        quote: document.getElementById('quote'),
+        playPauseBtn: document.getElementById('play-pause'),
+        prevBtn: document.getElementById('prev'),
+        nextBtn: document.getElementById('next'),
+        playerContainer: document.getElementById('yt-player'),
+      },
+    });
+  </script>
+</body>
+</html>

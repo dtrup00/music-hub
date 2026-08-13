@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Music Hub</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  }
+  .hub {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+  }
+  p.subtitle {
+    opacity: 0.7;
+    margin-bottom: 36px;
+  }
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+  .card {
+    text-decoration: none;
+    color: #fff;
+    width: 220px;
+    padding: 32px 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .card .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .card .name {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .card .desc {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+  <div class="hub">
+    <h1>🎵 Music Hub</h1>
+    <p class="subtitle">Pick a playlist to start listening</p>
+    <div class="cards">
+      <a class="card" href="playlists/durga-puja/index.html">
+        <span class="emoji">🪔</span>
+        <div class="name">Durga Puja</div>
+        <div class="desc">Maa Asche — devotional & festive vibes</div>
+      </a>
+      <a class="card" href="playlists/gym/index.html">
+        <span class="emoji">🔥</span>
+        <div class="name">Gym</div>
+        <div class="desc">Beast mode workout playlist</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

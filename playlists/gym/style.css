@@ -1,0 +1,65 @@
+body {
+  background: linear-gradient(
+      to bottom,
+      rgba(10, 10, 12, 0.6),
+      rgba(5, 5, 8, 0.85)
+    ),
+    radial-gradient(circle at 15% 25%, #ff3d3d 0%, transparent 40%),
+    radial-gradient(circle at 85% 20%, #ffb800 0%, transparent 35%),
+    linear-gradient(160deg, #0a0a0c 0%, #1a1a1f 40%, #26262b 70%, #101010 100%);
+  background-blend-mode: overlay;
+  position: relative;
+}
+
+body::before {
+  content: '🏋️ 💪 🔥';
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.5;
+  letter-spacing: 20px;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 61, 61, 0.03) 0px,
+    rgba(255, 61, 61, 0.03) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+  pointer-events: none;
+}
+
+.page-title {
+  color: #ffb800;
+  text-transform: uppercase;
+}
+
+.now-playing-card {
+  border: 1px solid rgba(255, 184, 0, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 61, 61, 0.15);
+}
+
+.album-art {
+  border: 2px solid #ffb800;
+}
+
+.controls button {
+  background: rgba(255, 61, 61, 0.2);
+  border-color: rgba(255, 184, 0, 0.4);
+}
+
+.controls button:hover {
+  background: rgba(255, 61, 61, 0.4);
+}
+
+#play-pause {
+  background: linear-gradient(135deg, #ff3d3d, #ffb800);
+  border: none;
+}

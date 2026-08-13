@@ -1,0 +1,59 @@
+body {
+  background: linear-gradient(
+      to bottom,
+      rgba(60, 10, 20, 0.55),
+      rgba(20, 5, 15, 0.75)
+    ),
+    radial-gradient(circle at 20% 20%, #ff9933 0%, transparent 40%),
+    radial-gradient(circle at 80% 30%, #b5121b 0%, transparent 45%),
+    linear-gradient(160deg, #2b0a12 0%, #4a0e1c 40%, #7a1b2e 70%, #b5121b 100%);
+  background-blend-mode: overlay;
+  position: relative;
+}
+
+body::before {
+  content: '🪔 🕉 🪔';
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.5;
+  letter-spacing: 20px;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 215, 140, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.page-title {
+  color: #ffd27a;
+}
+
+.now-playing-card {
+  border: 1px solid rgba(255, 200, 120, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 153, 51, 0.15);
+}
+
+.album-art {
+  border: 2px solid #ffd27a;
+}
+
+.controls button {
+  background: rgba(255, 153, 51, 0.2);
+  border-color: rgba(255, 210, 122, 0.4);
+}
+
+.controls button:hover {
+  background: rgba(255, 153, 51, 0.4);
+}
+
+#play-pause {
+  background: linear-gradient(135deg, #ff9933, #b5121b);
+  border: none;
+}
