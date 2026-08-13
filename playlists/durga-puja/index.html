@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Maa Asche 🪔 Durga Puja Playlist</title>
-<link rel="stylesheet" href="../../assets/shared/base.css?v=2" />
+<link rel="stylesheet" href="../../assets/shared/base.css?v=3" />
 <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
@@ -15,16 +15,18 @@
     <div class="page-title">Durga Puja</div>
     <div class="now-playing-label">Now Playing</div>
 
-    <img id="song-art" class="album-art" src="" alt="Album art" />
-    <h2 id="song-title" class="song-title">Loading...</h2>
-    <p id="song-artist" class="song-artist"></p>
-
-    <p id="quote" class="quote"></p>
-
-    <div class="controls">
-      <button id="prev" aria-label="Previous song">⏮</button>
-      <button id="play-pause" aria-label="Play or pause">▶</button>
-      <button id="next" aria-label="Next song">⏭</button>
+    <div class="np-body">
+      <img id="song-art" class="album-art" src="" alt="Album art" />
+      <div class="np-info">
+        <h2 id="song-title" class="song-title">Loading...</h2>
+        <p id="song-artist" class="song-artist"></p>
+        <p id="quote" class="quote"></p>
+        <div class="controls">
+          <button id="prev" aria-label="Previous song">⏮</button>
+          <button id="play-pause" aria-label="Play or pause">▶</button>
+          <button id="next" aria-label="Next song">⏭</button>
+        </div>
+      </div>
     </div>
 
     <div id="yt-player"></div>
