@@ -1,20 +1,39 @@
 body {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(60, 10, 20, 0.5) 0%,
-      rgba(30, 8, 16, 0.55) 40%,
-      rgba(20, 5, 15, 0.9) 100%
-    ),
-    url('https://loremflickr.com/1600/1200/durga,puja,diya');
+  background-color: #1a0509;
+  background-image:
+    radial-gradient(ellipse 900px 600px at 20% 10%, rgba(255, 153, 51, 0.35), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 85% 15%, rgba(181, 18, 27, 0.4), transparent 55%),
+    radial-gradient(ellipse 1000px 800px at 50% 100%, rgba(255, 153, 51, 0.25), transparent 60%),
+    radial-gradient(rgba(255, 215, 140, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(160deg, #2b0a12 0%, #4a0e1c 40%, #7a1b2e 70%, #b5121b 100%);
+  background-size: auto, auto, auto, 24px 24px, auto;
   position: relative;
+}
+
+body::before {
+  content: '🪔 🕉 🪔';
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  opacity: 0.4;
+  letter-spacing: 24px;
+  z-index: 0;
+  pointer-events: none;
 }
 
 body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 215, 140, 0.08) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(255, 215, 140, 0.04) 0px,
+    rgba(255, 215, 140, 0.04) 2px,
+    transparent 2px,
+    transparent 60px
+  );
   pointer-events: none;
   z-index: 0;
 }
