@@ -4,75 +4,111 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   font-family: 'Segoe UI', Roboto, sans-serif;
   color: #fff;
   overflow-x: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 20px 16px;
+  gap: 24px;
+}
+
+.hero-title {
+  margin-top: 6vh;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+.hero-subtitle {
+  margin-top: -18px;
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+  text-align: center;
+  opacity: 0.9;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  max-width: 500px;
+  padding: 0 12px;
 }
 
 .now-playing-card {
-  width: 90%;
-  max-width: 420px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 32px 24px;
+  width: 100%;
+  max-width: 320px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 18px 18px 16px;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 2vh;
 }
 
 .page-title {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
   letter-spacing: 1px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .now-playing-label {
-  font-size: 0.75rem;
-  letter-spacing: 3px;
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
   opacity: 0.7;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 }
 
 .album-art {
-  width: 220px;
-  height: 220px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  border-radius: 16px;
-  margin: 0 auto 20px;
+  border-radius: 12px;
+  margin: 0 auto 12px;
   display: block;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .song-title {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin: 0 0 4px;
+  margin: 0 0 2px;
+  line-height: 1.25;
 }
 
 .song-artist {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   opacity: 0.8;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 
 .quote {
   font-style: italic;
-  font-size: 0.95rem;
-  min-height: 44px;
-  margin-bottom: 24px;
+  font-size: 0.8rem;
+  min-height: 34px;
+  margin-bottom: 14px;
   opacity: 0.95;
-  padding: 0 8px;
+  padding: 0 4px;
+  line-height: 1.3;
 }
 
 .quote.fade-in {
@@ -94,19 +130,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 .controls button {
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: #fff;
-  font-size: 1.3rem;
-  width: 56px;
-  height: 56px;
+  font-size: 1.1rem;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .controls button:hover {
@@ -115,15 +152,15 @@ body {
 }
 
 #play-pause {
-  width: 68px;
-  height: 68px;
-  font-size: 1.6rem;
+  width: 54px;
+  height: 54px;
+  font-size: 1.3rem;
 }
 
 .back-link {
   display: inline-block;
-  margin-top: 20px;
-  font-size: 0.8rem;
+  margin-top: 12px;
+  font-size: 0.72rem;
   opacity: 0.7;
   color: #fff;
   text-decoration: none;
@@ -132,4 +169,25 @@ body {
 .back-link:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+@media (max-width: 380px) {
+  .now-playing-card {
+    max-width: 100%;
+    padding: 14px 14px 12px;
+  }
+  .album-art {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-height: 800px) {
+  body {
+    justify-content: center;
+  }
+  .now-playing-card {
+    margin-bottom: 0;
+    margin-top: 6vh;
+  }
 }

@@ -31,6 +31,9 @@ class MusicPlayer {
 
     this._loadYouTubeAPI();
     this._bindControls();
+    // Render title/artist/art immediately — don't wait on the YouTube API,
+    // so the UI never looks "broken" before playback is ready.
+    this._renderCurrentSong();
   }
 
   _loadYouTubeAPI() {
@@ -97,6 +100,11 @@ class MusicPlayer {
     this.els.title.textContent = song.title;
     this.els.artist.textContent = song.artist;
     if (this.els.art) {
+      this.els.art.onerror = () => {
+        // Fallback to a lower-res thumbnail if hqdefault isn't available yet.
+        this.els.art.onerror = null;
+        this.els.art.src = `https://img.youtube.com/vi/${song.youtubeId}/mqdefault.jpg`;
+      };
       this.els.art.src = `https://img.youtube.com/vi/${song.youtubeId}/hqdefault.jpg`;
     }
     this._rotateQuote();
